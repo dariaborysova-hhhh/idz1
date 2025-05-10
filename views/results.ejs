@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Результати запиту</title>
+</head>
+<body>
+    <h1>Результати запиту</h1>
+
+    <h2>Перелік палат, у яких чергує обрана медсестра:</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Назва палати</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% wardsForNurse.forEach(ward => { %>
+                <tr>
+                    <td><%= ward.name %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+    <h2>Медсестри обраного відділення:</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Назва медсестри</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% nursesInDepartment.forEach(nurse => { %>
+                <tr>
+                    <td><%= nurse.name %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+    <h2>Чергування в зазначену зміну:</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Медсестра</th>
+                <th>Палата</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% shifts.forEach(row => { %>
+                <tr>
+                    <td><%= row.name %></td>
+                    <td><%= row.ward_name %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</body>
+</html>
