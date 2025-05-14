@@ -6,11 +6,19 @@
 <body>
   <h1>Розклад медсестри</h1>
   <form action="/results" method="POST">
-    Nurse ID: <input type="text" name="nurse_id" /><br/>
-    Ward ID: <input type="text" name="ward_id" /><br/>
-    Shift: <input type="text" name="shift" /><br/>
+    <label for="nurse_name">Введіть ім’я медсестри:</label>
+    <input type="text" name="nurse_name" id="nurse_name" required>
+    <br/><br/>
+
+    <label for="ward_name">Введіть назву палати:</label>
+    <input type="text" name="ward_name" id="ward_name">
+    <br/><br/>
+
+    <label for="shift">Введіть зміну (First, Second, Third):</label>
+    <input type="text" name="shift" id="shift" required>
+    <br/><br/>
+
     <button type="submit">Показати</button>
   </form>
-  <div id="output"></div>
 </body>
 </html>
